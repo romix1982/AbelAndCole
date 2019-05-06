@@ -1,0 +1,352 @@
+﻿/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background: #6e7b6f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #6441A5, #2a0845); /* Chrome 10-25, Safari 5.1-6 */
+}
+
+body {
+    font-family: montserrat, arial, verdana;
+    background: transparent;
+}
+
+/*form styles*/
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 0px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 80%;
+        margin: 0 10%;
+        /*stacking fieldsets above each other*/
+        position: relative;
+    }
+
+        /*Hide all except first fieldset*/
+        #msform fieldset:not(:first-of-type) {
+            display: none;
+        }
+
+    /*inputs*/
+    #msform input, #msform textarea {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2C3E50;
+        font-size: 13px;
+    }
+
+        #msform input:focus, #msform textarea:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            border: 1px solid #ee0979;
+            outline-width: 0;
+            transition: All 0.5s ease-in;
+            -webkit-transition: All 0.5s ease-in;
+            -moz-transition: All 0.5s ease-in;
+            -o-transition: All 0.5s ease-in;
+        }
+
+        
+
+    /*buttons*/
+    #msform .action-button {
+        width: 100px;
+        background: #e3782f;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+    }
+
+        #msform .action-button:hover, #msform .action-button:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #e3782f;
+        }
+
+    #msform .action-button-previous {
+        width: 100px;
+        background: #da9220;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+    }
+
+        #msform .action-button-previous:hover, #msform .action-button-previous:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #da9220;
+        }
+
+/*headings*/
+.fs-title {
+    font-family: Montserrat;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+
+    #progressbar li {
+        list-style-type: none;
+        color: white;
+        text-transform: uppercase;
+        font-size: 9px;
+        width: 20%;
+        float: left;
+        position: relative;
+        letter-spacing: 1px;
+    }
+
+        #progressbar li:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 24px;
+            height: 24px;
+            line-height: 26px;
+            display: block;
+            font-size: 12px;
+            color: #333;
+            background: white;
+            border-radius: 25px;
+            margin: 0 auto 10px auto;
+        }
+
+        /*progressbar connectors*/
+        #progressbar li:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: white;
+            position: absolute;
+            left: -50%;
+            top: 9px;
+            z-index: -1; /*put it behind the numbers*/
+        }
+
+        #progressbar li:first-child:after {
+            /*connector not needed before the first step*/
+            content: none;
+        }
+
+        /*marking active/completed steps green*/
+        /*The number of the step and the connector before it = green*/
+        #progressbar li.active:before, #progressbar li.active:after {
+            background: #e3782f;
+            color: white;
+        }
+
+/*#msform ul.a {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+
+    #msform ul.a li {
+        display: block;
+        position: relative;
+        float: left;
+        width: 100%;
+        font-family: montserrat;
+        color: #2C3E50;
+        text-align:left;
+    }*/
+
+
+
+/* Not relevant to this form */
+.dme_link {
+    margin-top: 30px;
+    text-align: center;
+}
+
+    .dme_link a {
+        background: #FFF;
+        font-weight: bold;
+        color: #ee0979;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 5px 25px;
+        font-size: 12px;
+    }
+
+        .dme_link a:hover, .dme_link a:focus {
+            background: #C5C5F1;
+            text-decoration: none;
+        }
+
+
+
+
+
+ul li {
+    color: #2C3E50;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+    ul li input[type=radio] {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    ul li label {
+        display: block;
+        color: #2C3E50;
+        position: relative;
+        font-family: montserrat;
+        padding: 15px 15px 15px 80px;
+        margin: 10px auto;
+        height: 10px;
+        z-index: 9;
+        cursor: pointer;
+        -webkit-transition: all 0.25s linear;
+    }
+
+    ul li:hover label {
+        color: #da9220;
+    }
+
+    ul li .check {
+        display: block;
+        position: absolute;
+        border: 4px solid  #2C3E50;
+        border-radius: 100%;
+        height: 20px;
+        width: 20px;
+        top: 30px;
+        left: 120px;
+        z-index: 5;
+        transition: border .25s linear;
+        -webkit-transition: border .25s linear;
+    }
+
+    ul li:hover .check {
+        border: 4px solid #da9220;
+    }
+
+    ul li .check::before {
+        display: block;
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        height: 15px;
+        width: 15px;
+        top: -1.5px;
+        left: -1px;
+        margin: auto;
+        transition: background 0.25s linear;
+        -webkit-transition: background 0.25s linear;
+    }
+
+input[type=radio]:checked ~ .check {
+    border: 4px solid #cd4435;
+}
+
+    input[type=radio]:checked ~ .check::before {
+        background: #cd4435;
+    }
+
+input[type=radio]:checked ~ label {
+    color: #cd4435;
+}
+
+
+/*.signature {
+    margin: 10px auto;
+    padding: 10px 0;
+    width: 100%;
+}
+
+    .signature p {
+        text-align: center;
+        font-family: Helvetica, Arial, Sans-Serif;
+        font-size: 0.85em;
+        color: #AAAAAA;
+    }
+
+    .signature .much-heart {
+        display: inline-block;
+        position: relative;
+        margin: 0 4px;
+        height: 10px;
+        width: 10px;
+        background: #AC1D3F;
+        border-radius: 4px;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+        .signature .much-heart::before,
+        .signature .much-heart::after {
+            display: block;
+            content: '';
+            position: absolute;
+            margin: auto;
+            height: 10px;
+            width: 10px;
+            border-radius: 5px;
+            background: #AC1D3F;
+            top: -4px;
+        }
+
+        .signature .much-heart::after {
+            bottom: 0;
+            top: auto;
+            left: -4px;
+        }
+
+    .signature a {
+        color: #AAAAAA;
+        text-decoration: none;
+        font-weight: bold;
+    }*/
